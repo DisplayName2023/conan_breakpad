@@ -1,10 +1,10 @@
 // ConsoleApp.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-#include "client/windows/handler/exception_handler.h"
 
 #include <iostream>
+#include "../BreakpadDynamic/BreakpadFunctions.h"
 
-void InitializeBreakpad();
+// void InitializeBreakpad();
 
 void CauseCrash() {
     int* ptr = nullptr;
@@ -15,7 +15,8 @@ int main()
 {
     std::cout << "Hello World!\n";
 
-    InitializeBreakpad();
+    //InitializeBreakpad();
+    initBreakpad();
     CauseCrash();
 
     return 0;

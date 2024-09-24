@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApp", "ConsoleApp.vc
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BreakpadStatic", "..\BreakpadStatic\BreakpadStatic.vcxproj", "{985C2D31-5D9D-4EAE-8C59-B106449BBC96}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BreakpadDynamic", "..\BreakpadDynamic\BreakpadDynamic.vcxproj", "{02EEB6E4-5735-47F5-BFE6-0015D7C2DB7A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{985C2D31-5D9D-4EAE-8C59-B106449BBC96}.Release|x64.Build.0 = Release|x64
 		{985C2D31-5D9D-4EAE-8C59-B106449BBC96}.Release|x86.ActiveCfg = Release|Win32
 		{985C2D31-5D9D-4EAE-8C59-B106449BBC96}.Release|x86.Build.0 = Release|Win32
+		{02EEB6E4-5735-47F5-BFE6-0015D7C2DB7A}.Debug|x64.ActiveCfg = Debug|x64
+		{02EEB6E4-5735-47F5-BFE6-0015D7C2DB7A}.Debug|x64.Build.0 = Debug|x64
+		{02EEB6E4-5735-47F5-BFE6-0015D7C2DB7A}.Debug|x86.ActiveCfg = Debug|Win32
+		{02EEB6E4-5735-47F5-BFE6-0015D7C2DB7A}.Debug|x86.Build.0 = Debug|Win32
+		{02EEB6E4-5735-47F5-BFE6-0015D7C2DB7A}.Release|x64.ActiveCfg = Release|x64
+		{02EEB6E4-5735-47F5-BFE6-0015D7C2DB7A}.Release|x64.Build.0 = Release|x64
+		{02EEB6E4-5735-47F5-BFE6-0015D7C2DB7A}.Release|x86.ActiveCfg = Release|Win32
+		{02EEB6E4-5735-47F5-BFE6-0015D7C2DB7A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
