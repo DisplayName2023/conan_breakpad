@@ -21,7 +21,7 @@ std::wstring stringToWstring(const std::string& str) {
 }
 #endif
 
-namespace BreakpadStatic
+namespace BreakpadLib
 {
 	void InitializeBreakpad(const wchar_t* dumpDirName);
 }
@@ -33,7 +33,7 @@ extern "C"
 	void initBreakpad(const char* dumpDirName)
 	{
 		std::wstring ws = stringToWstring(dumpDirName);
-		BreakpadStatic::InitializeBreakpad(ws.c_str());
+		BreakpadLib::InitializeBreakpad(ws.c_str());
 	}
 
 }

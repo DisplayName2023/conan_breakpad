@@ -3,7 +3,7 @@
 #include <iostream>
 #include <filesystem>
 
-namespace BreakpadStatic
+namespace BreakpadLib
 {
 
 

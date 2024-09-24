@@ -2,7 +2,7 @@
 //
 
 #include <iostream>
-#include "../BreakpadDynamic/BreakpadFunctions.h"
+#include "../BreakpadDll/BreakpadFunctions.h"
 
 // void InitializeBreakpad(const wchar_t* dumpDirName);
 

@@ -135,7 +135,7 @@
     <ClCompile Include="ConsoleApp.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BreakpadDynamic\BreakpadDynamic.vcxproj">
+    <ProjectReference Include="..\BreakpadDll\BreakpadDynamic.vcxproj">
       <Project>{02eeb6e4-5735-47f5-bfe6-0015d7c2db7a}</Project>
     </ProjectReference>
   </ItemGroup>

@@ -24,7 +24,7 @@
     <ProjectGuid>{985c2d31-5d9d-4eae-8c59-b106449bbc96}</ProjectGuid>
     <RootNamespace>BreakpadStatic</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>BreakpadStatic</ProjectName>
+    <ProjectName>BreakpadLib</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -148,7 +148,7 @@
     <ClInclude Include="framework.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BreakpadStatic.cpp" />
+    <ClCompile Include="BreakpadLib.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
