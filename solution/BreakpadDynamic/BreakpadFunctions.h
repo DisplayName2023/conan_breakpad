@@ -14,6 +14,6 @@
 /* clang-format on */
 
 extern "C" {
-	BREAKPAD_API void initBreakpad();
+	BREAKPAD_API void initBreakpad(const char* dumpDirName);
 }
 

@@ -1,6 +1,10 @@
 #include "client/windows/handler/exception_handler.h"
 
 #include <iostream>
+#include <filesystem>
+
+namespace BreakpadStatic
+{
 
 
 // TODO: This is an example of a library function
@@ -14,12 +18,17 @@ static bool DumpCallback(const wchar_t* dump_path,
     return succeeded;
 }
 
-void InitializeBreakpad() {
+void InitializeBreakpad(const wchar_t* dumpDirName) {
+    std::filesystem::create_directories(dumpDirName);
+
     google_breakpad::ExceptionHandler* handler =
         new google_breakpad::ExceptionHandler(
-            L"C:\\Temp\\Breakpad",  // Path to save dump files
+            dumpDirName,  // Path to save dump files
             nullptr,  // Filter callback
             DumpCallback,  // Minidump callback
             nullptr,  // Context pointer
             google_breakpad::ExceptionHandler::HANDLER_ALL);
+}
+
+
 }

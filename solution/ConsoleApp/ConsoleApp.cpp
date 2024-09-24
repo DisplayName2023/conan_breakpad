@@ -4,7 +4,7 @@
 #include <iostream>
 #include "../BreakpadDynamic/BreakpadFunctions.h"
 
-// void InitializeBreakpad();
+// void InitializeBreakpad(const wchar_t* dumpDirName);
 
 void CauseCrash() {
     int* ptr = nullptr;
@@ -16,7 +16,7 @@ int main()
     std::cout << "Hello World!\n";
 
     //InitializeBreakpad();
-    initBreakpad();
+    initBreakpad("C:/Temp/BreakpadDumps");
     CauseCrash();
 
     return 0;
