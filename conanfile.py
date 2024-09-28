@@ -1,7 +1,7 @@
 from os.path import join
 from conan import ConanFile
 from conan.tools.cmake import CMake, CMakeDeps, CMakeToolchain, cmake_layout
-from conan.tools.files import copy
+from conan.tools.files import copy, collect_libs
 from pathlib import Path
 import os
 
@@ -16,9 +16,9 @@ class MyProjectConan(ConanFile):
     build_policy = "missing"
 
     options = {"shared": [True, False], "fPIC": [True, False]}
-    default_options = {"shared": True, "fPIC": True}
+    default_options = {"shared": False, "fPIC": True}
     
-    exports_sources = "CMakeLists.txt", "conanfile.py", "src*", "cmake*", "!build"
+    exports_sources = "CMakeLists.txt", "conanfile.py", "src*", "cmake*", "!build", "!src/solution/BreakpadDll/x64*", "!src/solution/BreakpadLib/x64*", "!src/solution/ConsoleApp/x64*", "!*.vs/*"
     requires = "ms-gsl/4.0.0"
 
         
@@ -41,13 +41,23 @@ class MyProjectConan(ConanFile):
         # Optionally generate a CMakeToolchain for Conan's dependencies
         tc = CMakeToolchain(self)
         
-        vckpg_root = os.path.join(script_dir, "..", "vcpkg")
-        file_path = Path(f"{vckpg_root}/packages/breakpad_x64-windows/share/unofficial-breakpad")
-        # Set the vcpkg toolchain file location
-        tc.variables["unofficial-breakpad_DIR"] = file_path.as_posix()
+
         tc.generate()
 
     def build(self):
         cmake = CMake(self)
         cmake.configure()
         cmake.build()
+
+
+    def package(self):
+        cmake = CMake(self)
+        cmake.install()
+
+        copy(self, "*Breakpad.h", join(self.source_folder, 'src'), join(self.package_folder, "include/BreakpadCpp"), keep_path=True)
+        copy(self, "*BreakpadDll.lib", self.build_folder, join(self.package_folder, "lib"), keep_path=False)
+        copy(self, "*BreakpadDll.dll", self.build_folder, join(self.package_folder, "bin"), keep_path=False)
+
+    def package_info(self):
+        self.cpp_info.libs = collect_libs(self)
+        self.output.info("package_info() " + ' '.join(self.cpp_info.libs))

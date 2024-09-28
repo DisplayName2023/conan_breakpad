@@ -35,3 +35,10 @@ target_include_directories(${PROJECT_NAME} PRIVATE "${LIB_DIR}/BreakpadDll")
 
 find_package(Microsoft.GSL REQUIRED)
 target_include_directories(${PROJECT_NAME} PUBLIC ${Microsoft.GSL_INCLUDE_DIRS})
+
+
+
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+  COMMAND ${CMAKE_COMMAND} -E copy_directory_if_different ${CMAKE_SOURCE_DIR}/src/solution/x64/Release $<TARGET_FILE_DIR:${PROJECT_NAME}> 
+  COMMAND_EXPAND_LISTS
+)

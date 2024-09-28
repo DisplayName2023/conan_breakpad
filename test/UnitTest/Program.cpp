@@ -20,12 +20,7 @@ TEST(AddTest, PositiveNumbers) {
     EXPECT_EQ(add(10, 20), 30);
 
     BreakpadCpp::Breakpad::init("C:/Temp/BreakpadDump");
-    causeCrash();
+    // causeCrash();
     std::cout << "Hello World!" << std::endl;
 }
 
-// int main()
-// {
-//     std::cout << "Hello World!" << std::endl;
-//     return 0;
-// }
