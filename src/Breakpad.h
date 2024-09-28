@@ -8,8 +8,7 @@ namespace BreakpadCpp
     class Breakpad
     {
     public:
-        static void Init();
-        static int32_t number;
+        static void init(const char* dumpDirName);
     };
     
 }

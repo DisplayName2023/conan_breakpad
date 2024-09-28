@@ -18,6 +18,19 @@ set( CMAKE_MAP_IMPORTED_CONFIG_DEBUG RELEASE )
 set( CMAKE_MAP_IMPORTED_CONFIG_RELWITHDEBINFO RELEASE )
 
 
+# Set the runtime library based on the configuration type
+if(MSVC)
+    # Check for configurations
+    if(CMAKE_BUILD_TYPE STREQUAL "Release")
+        # Release configuration uses the default settings
+        message(STATUS "Using default runtime for Release")
+    else()
+        # For all other configurations (Debug, RelWithDebInfo, etc.), use /MD
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MD")
+        message(STATUS "Using /MD for non-Release configurations")
+    endif()
+endif()
+
 
 add_subdirectory(src)
 
