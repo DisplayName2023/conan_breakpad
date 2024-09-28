@@ -55,8 +55,8 @@ class MyProjectConan(ConanFile):
         cmake.install()
 
         copy(self, "*Breakpad.h", join(self.source_folder, 'src'), join(self.package_folder, "include/BreakpadCpp"), keep_path=True)
-        copy(self, "*BreakpadDll.lib", self.build_folder, join(self.package_folder, "lib"), keep_path=False)
-        copy(self, "*BreakpadDll.dll", self.build_folder, join(self.package_folder, "bin"), keep_path=False)
+        copy(self, "*Breakpad*.lib", self.build_folder, join(self.package_folder, "lib"), keep_path=False)
+        copy(self, "*Breakpad*.dll", self.build_folder, join(self.package_folder, "bin"), keep_path=False)
 
     def package_info(self):
         self.cpp_info.libs = collect_libs(self)
