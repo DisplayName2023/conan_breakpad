@@ -30,6 +30,8 @@ endif()
 
 add_executable( ${PROJECT_NAME}
     main.cpp
+    InvalidFunctions.h
+    InvalidFunctions.cpp
     )
 
 find_package(conan_breakpad REQUIRED)
